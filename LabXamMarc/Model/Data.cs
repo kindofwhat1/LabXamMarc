@@ -4,7 +4,29 @@ using System.Text;
 
 namespace LabXamMarc.Model
 {
-    public class Data
+
+    public class Crime
+    {
+        public Links links { get; set; }
+        public data[] data { get; set; }
+    }
+
+    public class Links
+    {
+        public int current_page { get; set; }
+        public string first_page_url { get; set; }
+        public int from { get; set; }
+        public int last_page { get; set; }
+        public string last_page_url { get; set; }
+        public string next_page_url { get; set; }
+        public string path { get; set; }
+        public int per_page { get; set; }
+        public object prev_page_url { get; set; }
+        public int to { get; set; }
+        public int total { get; set; }
+    }
+
+    public class data
     {
         public int id { get; set; }
         public DateTime pubdate_iso8601 { get; set; }
@@ -17,8 +39,8 @@ namespace LabXamMarc.Model
         public string content_teaser { get; set; }
         public string location_string { get; set; }
         public string date_human { get; set; }
-        public double lat { get; set; }
-        public double lng { get; set; }
+        public float lat { get; set; }
+        public float lng { get; set; }
         public string viewport_northeast_lat { get; set; }
         public string viewport_northeast_lng { get; set; }
         public string viewport_southwest_lat { get; set; }
@@ -29,4 +51,5 @@ namespace LabXamMarc.Model
         public string external_source_link { get; set; }
         public string permalink { get; set; }
     }
+
 }

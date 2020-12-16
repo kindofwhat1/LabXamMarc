@@ -5,24 +5,30 @@
              x:Class="LabXamMarc.MainPage">
 
     <StackLayout Margin="15,20,15,0"> <!--Lek mer med margins-->
-        <Frame BorderColor="Black" Padding="5">
-            <StackLayout Orientation="Horizontal" Spacing="15">
-                <BoxView Color="Red" />
-                <Label Text="Brottsplats 1" FontSize="Large" VerticalOptions="Center" />
-            </StackLayout>
-        </Frame>
-        <Frame BorderColor="Black" Padding="5">
-            <StackLayout Orientation="Horizontal" Spacing="15">
-                <BoxView Color="Pink" />
-                <Label Text="Brottsplats 2" FontSize="Medium" VerticalOptions="Center" />
-            </StackLayout>
-        </Frame>
-        <Frame BorderColor="Black" Padding="5">
-            <StackLayout Orientation="Horizontal" Spacing="15">
-                <BoxView Color="Yellow"/>
-                <Label Text="Brottsplats 3" FontSize="Small" VerticalOptions="Center"/>
-            </StackLayout>
-        </Frame>
+        <ListView x:Name="crimelst" ItemsSource="{Binding data}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="50" BorderColor="Black" Margin="10" BackgroundColor="#92E2F3">
+                            <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding title_type}" FontSize="Large"/>
+                            <Label Text="{Binding title_location}" FontSize="Small"/>
+                            <Label Text="{Binding date_human}" FontSize="Small"/>
+                           
+                            <!-- Lägg till i details page
+                          
+                            <Label Text="{Binding title_type}"/>
+                            <Label Text="{Binding title_location}"/>
+                            <Label Text="{Binding description}"/>
+                            <Label Text="{Binding content}"/>
+                            <Label Text="{Binding date_human}"/>
+                            -->
+                        </StackLayout>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </StackLayout>
 
 </ContentPage>
