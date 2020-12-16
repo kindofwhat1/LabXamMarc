@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Brottsplatskartan"
+             x:Class="LabXamMarc.MainPage">
+
+    <StackLayout Margin="15,20,15,0"> <!--Lek mer med margins-->
+        <Frame BorderColor="Black" Padding="5">
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <BoxView Color="Red" />
+                <Label Text="Brottsplats 1" FontSize="Large" VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+        <Frame BorderColor="Black" Padding="5">
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <BoxView Color="Pink" />
+                <Label Text="Brottsplats 2" FontSize="Medium" VerticalOptions="Center" />
+            </StackLayout>
+        </Frame>
+        <Frame BorderColor="Black" Padding="5">
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <BoxView Color="Yellow"/>
+                <Label Text="Brottsplats 3" FontSize="Small" VerticalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
+
+</ContentPage>
