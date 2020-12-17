@@ -17,9 +17,10 @@ namespace LabXamMarc
         public MainPage()
         {
             InitializeComponent();
-            RetriveCrimesAsync();
+            BindingContext = App.Crimes;
+           // RetriveCrimesAsync();
         }
-
+        /*
         // Collect data of crimes
         private async Task RetriveCrimesAsync()
         {
@@ -51,6 +52,6 @@ namespace LabXamMarc
                 await DisplayAlert("Error" , "We are sorry, the internet connection is not available. ("+ e.Message + ")", "OK");
             }
             
-        }
+        }*/
     }
 }

@@ -3,19 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              Title="Brottsplatskartan"
              x:Class="LabXamMarc.MainPage">
+    <StackLayout>
+        <OnPlatform x:TypeArguments="View">
+            <On Platform="Android">
+                <StackLayout>
 
-    <StackLayout Margin="15,20,15,0"> <!--Lek mer med margins-->
-        <ListView x:Name="crimelst" ItemsSource="{Binding data}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Frame CornerRadius="50" BorderColor="Black" Margin="10" BackgroundColor="#92E2F3">
-                            <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding title_type}" FontSize="Large"/>
-                            <Label Text="{Binding title_location}" FontSize="Small"/>
-                            <Label Text="{Binding date_human}" FontSize="Small"/>
-                           
-                            <!-- Lägg till i details page
+                    <!--Lek mer med margins-->
+                    <ListView x:Name="crimelst1" ItemsSource="{Binding CrimeList}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <!--<Frame>-->
+                                        <StackLayout>
+                                        <Label Text="HEJ" />
+                                        <Label Text="{Binding title_type}" FontSize="Large"/>
+                                            <Label Text="{Binding title_location}" FontSize="Small"/>
+                                            <Label Text="{Binding date_human}" FontSize="Small"/>
+
+                                        </StackLayout>
+                                    <!--</Frame>-->
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </On>
+            <On Platform="UWP">
+                <StackLayout Margin="15,20,15,0">
+
+                    <!--Lek mer med margins-->
+                    <ListView x:Name="crimelst" ItemsSource="{Binding CrimeList}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame CornerRadius="10" BorderColor="Black" Margin="10" BackgroundColor="#92E2F3">
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding title_type}" FontSize="Large"/>
+                                            <Label Text="{Binding title_location}" FontSize="Small"/>
+                                            <Label Text="{Binding date_human}" FontSize="Small"/>
+
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </On>
+        </OnPlatform>
+    </StackLayout>
+</ContentPage>
+
+
+
+<!-- Lägg till i details page
                           
                             <Label Text="{Binding title_type}"/>
                             <Label Text="{Binding title_location}"/>
@@ -23,12 +64,3 @@
                             <Label Text="{Binding content}"/>
                             <Label Text="{Binding date_human}"/>
                             -->
-                        </StackLayout>
-                        </Frame>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-
-</ContentPage>
