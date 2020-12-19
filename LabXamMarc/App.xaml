@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LabXamMarc.App">
     <Application.Resources>
+        <Color x:Key="NavBar">#ff4d4d</Color>
+        <Color x:Key="BarColor">black</Color>
 
     </Application.Resources>
 </Application>

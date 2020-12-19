@@ -21,7 +21,6 @@ namespace LabXamMarc.ViewModel
             try
                 {
                    
-
                     string apiURL = @"https://brottsplatskartan.se/api/events";
                     HttpClient httpClient = new HttpClient();
                     HttpResponseMessage response = await httpClient.GetAsync(new Uri(apiURL));

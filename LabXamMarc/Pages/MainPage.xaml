@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Brottsplatskartan"    
+             x:Class="LabXamMarc.MainPage">
+
+    <ScrollView>
+        <Grid BackgroundColor="Black">
+            <ListView x:Name="crimelst" ItemTapped="crimelst_ItemTapped" ItemsSource="{Binding CrimeList}" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                            <Frame CornerRadius="20" BackgroundColor="#ccd9ff" Padding="0" Margin="20,12,20,12">
+                            <Grid  Margin="0,10,0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            
+                            <Label Text="{Binding title_type}" Grid.Row="0" Grid.Column="1" FontSize="Large"/>
+                            <Label Text="{Binding title_location}" Grid.Row="1"  Grid.Column="1" FontSize="Medium"/>
+                            <Label Text="{Binding date_human}" Grid.Row="2"  Grid.Column="1"  FontSize="Small"/>
+                            </Grid>
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+    </ScrollView>
+</ContentPage>
+
+
+
+<!-- Lägg till i details page
+                          
+                            <Label Text="{Binding title_type}"/>
+                            <Label Text="{Binding title_location}"/>
+                            <Label Text="{Binding description}"/>
+                            <Label Text="{Binding content}"/>
+                            <Label Text="{Binding date_human}"/>
+                            -->
+
+<!--<StackLayout> // Fixa detta om desigenen inte fungerar för Android 
+    <OnPlatform x:TypeArguments="View">
+        <On Platform="Android">
+            <StackLayout>
+
+                --><!--Lek mer med margins--><!--
+                <ListView x:Name="crimelst1" ItemsSource="{Binding CrimeList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                --><!--<Frame>--><!--
+                                <StackLayout>
+                                    <Label Text="HEJ" />
+                                    <Label Text="{Binding title_type}" FontSize="Large"/>
+                                    <Label Text="{Binding title_location}" FontSize="Small"/>
+                                    <Label Text="{Binding date_human}" FontSize="Small"/>
+
+                                </StackLayout>
+                                --><!--</Frame>--><!--
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </On>
+        <On Platform="UWP">
+            <StackLayout Margin="15,20,15,0">
+
+                --><!--Lek mer med margins--><!--
+                <ListView x:Name="crimelst" ItemsSource="{Binding CrimeList}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame CornerRadius="10" BorderColor="Black" Margin="10" BackgroundColor="#92E2F3">
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding title_type}" FontSize="Large"/>
+                                        <Label Text="{Binding title_location}" FontSize="Small"/>
+                                        <Label Text="{Binding date_human}" FontSize="Small"/>
+
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </On>
+    </OnPlatform>
+</StackLayout>-->

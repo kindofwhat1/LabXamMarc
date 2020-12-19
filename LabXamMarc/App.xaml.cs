@@ -11,7 +11,10 @@ namespace LabXamMarc
         public App()
         {
             InitializeComponent();
-            MainPage = new MainPage();
+            NavigationPage page = new NavigationPage(new MainPage());
+            page.BarBackgroundColor = (Color)Application.Current.Resources["NavBar"];
+            page.BarTextColor = (Color)Application.Current.Resources["BarColor"];
+            MainPage = page;
         }
 
         protected override async void OnStart()

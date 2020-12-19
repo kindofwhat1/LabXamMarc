@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Detaljer om brott"
+             x:Class="LabXamMarc.DetailsPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="20" BackgroundColor="Black">
+                <Frame BackgroundColor="#ccd9ff">
+                <StackLayout>
+                        <Label Text="Typ av brott:" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+
+                        <Label Text="{Binding title_type}" FontSize="18" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Label Text="Typ av brott:" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+
+                        <Label Text="{Binding title_type}" FontSize="18" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Label Text="Plats:"  FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+
+                        <Label Text="{Binding title_location}"  FontSize="18" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Label Text="Händelse:"  FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+
+                        <Label Text="{Binding description}"  FontSize="18" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Label Text="Detaljer:" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+
+                        <Label Text="{Binding content}" FontSize="18" LineBreakMode="WordWrap" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Label Text="När:"  FontSize="20" FontAttributes="Bold"  TextColor="Black" />
+
+                        <Label Text="{Binding date_human}"  FontSize="18" FontAttributes="Italic" TextColor="Black"/>
+
+                        <Image Source="{Binding image}" HeightRequest="250" WidthRequest="250" />
+                    </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage> 
